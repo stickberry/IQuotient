@@ -1,0 +1,392 @@
+body {
+
+	background: #e8e8e4;
+}
+
+.modal {
+
+    background: white;
+}
+
+.header {
+
+	background: #410021;
+	margin-top: -12px;
+}
+
+
+.head .nav-wrapper {
+
+    background: #410021;
+}
+
+.head li a{
+
+    font-size: 18px;
+}
+
+h2, h3, h4, li, .head .brand-logo {
+
+    font-family: "Marcellus SC" !important;
+}
+
+#format, .form2 {
+
+    font-family: "Marcellus SC" !important;  
+    font-size: 17px !important;
+}
+
+.form1 {
+
+  font-size: 14px;
+  font-family: "Simonetta";
+}
+
+#format2 {
+
+    font-family: "Marcellus SC" !important;  
+    font-size: 16px !important;
+}
+
+.iq li a:hover, .iq2 li a:hover, .active {
+
+    box-shadow: 0px -2px 0px white inset;
+    transition: .15s linear;
+}
+
+.active, .act {
+
+    cursor: default;
+}
+
+.dropdown-content {
+  margin: 0;
+  display: none;
+  min-width: 200px; /* Changed this to accomodate content width */
+  max-height: auto;
+  margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
+  overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  will-change: width, height;
+}
+
+.dropdown-content li a {
+    font-size: 17px;
+    color: #810041; /* no need for !important :) */
+}
+
+.dropdown-content li:hover {
+
+    background: #99033c;
+}
+
+.dropdown-content li:hover a {
+    color: white;
+}
+
+#first_field {
+
+    margin-top: -5px;
+}
+
+#field1 {
+
+  margin-top: -25px;
+}
+
+.iq .brand-logo, .iq2 .brand-logo {
+
+    font-size: 24px !important;
+    font-family: 'Simonetta', cursive !important;
+}
+
+#inputtext {
+
+    font-size: 13px !important;
+    font-family: 'Simonetta', cursive !important;
+}
+
+#desc {
+
+    font-size: 20px;
+    font-family: 'Simonetta', cursive;   
+}
+
+#desc2 {
+
+    font-family : "Marcellus SC";
+    margin-bottom: -3px;
+}
+
+.iq .nav-wrapper {
+
+	background: #280014;
+	margin-top: -20px;
+}
+
+.iq2 .nav-wrapper {
+
+    background: #280014;  
+}
+
+
+.iq2, .iq2 i, .iq2 [class^="mdi-"], .iq2 [class*="mdi-"], .iq2 i.material-icons {
+
+    height: 40px;
+    line-height: 40px;
+}
+
+.iq, .iq i, .iq [class^="mdi-"], .iq [class*="mdi-"], .iq i.material-icons {
+
+    height: 40px;
+    line-height: 40px;
+}
+
+.iq .button-collapse i, .iq2 .button-collapse i {
+
+    height: 40px;
+    line-height: 40px;
+}
+
+.iq .brand-logo, .iq2 .brand-logo { 
+
+    font-size: 2rem; 
+}
+
+.head, .head i, .head [class^="mdi-"], .head [class*="mdi-"], .head i.material-icons {
+
+    height: 95px;
+    line-height: 95px;
+}
+
+.head .button-collapse i {
+    height: 95px;
+    line-height: 95px;
+}
+
+#options {
+
+  margin-top: 9px;
+  background: #810041;
+  height: 42px;
+  line-height: 42px;
+}
+
+#changepwd {
+
+  width: 32%;
+  background: white;
+}
+
+#cpwd {
+
+  margin-top: 100px;
+}
+button {
+
+    font-family: "Marcellus SC";
+}
+
+.head .brand-logo { 
+
+    font-size: 3.5rem; 
+}
+
+.btn, .btn:hover{
+
+    background: #810041;
+    font-family: "Marcellus SC";
+    font-size: 16px;
+}
+
+input:hover, input:hover:after {
+
+    border-color: #810041;
+}
+
+#heading {
+
+  font-size: 30px !important;
+}
+
+.collapsible-header {
+
+  height: 65px !important;
+  line-height: 65px !important;
+  background: #810041;
+  color: white;
+}
+
+.collapsible-body {
+
+  background: white;
+  color: black;
+  font-family: "Playfair Display"; 
+  font-size: 16px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.hid {
+
+  display: none;
+}
+
+.red {
+
+  width: 60%;
+}
+
+thead {
+
+  background: #810041;
+  color: white;
+  font-family: "Cinzel" !important;
+  font-size: 24px;
+}
+
+ul.browser-default li {
+
+  list-style-type: initial;
+  color: black;
+}
+
+.vert {
+
+  display: inline;
+}
+
+#text {
+
+    width: 50%;
+    text-align: justify;
+}
+
+#bbody {
+
+  text-align: justify;
+  word-wrap: break-word;
+}
+#text2 {
+
+  width: 90%;
+}
+
+.diffont {
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+.rightside {
+  position: relative;
+  float: right !important;
+}
+.error, #text3 {
+
+  background: white;
+  font-family: "Marcellus SC";
+  height: 60px;
+  font-size: 18px;
+  color: red;
+  text-align: justify;
+}
+
+.error2 {
+
+  width: 32%;
+}
+#modal1 {
+
+  margin-top: 5%;
+  max-height: 90%;
+  max-width: 27%;
+}
+
+#modal2 {
+
+    margin-top: 1%;
+    max-height: 87%;
+    max-width: 50%;
+}
+
+#modal3 {
+
+    margin-top: 2%;
+    max-height: 90%;
+    max-width: 30%;
+}
+
+#modal4 {
+
+    margin-top: 2%;
+    max-height: 90%;
+    max-width: 50%;
+}
+
+#up {
+
+  margin-top: -20px;
+  padding-top: -20px;
+}
+#foot, #stats {
+    
+    background-color: #810041 !important;
+    font-family: "Marcellus SC";
+}
+
+#guide {
+
+  text-align: justify;
+  font-family: "Cormorant Garamond" !important;
+  font-size: 17px;
+}
+
+strong {
+
+  font-weight: bold;
+}
+.fill_space {
+
+  background: white;
+  height: 130px;
+  margin-top: -18px;
+}
+
+.fill_space2 {
+
+  background: white;
+  height: 130px;
+  width: 900px;
+  margin-left: -95px;
+}
+
+.form1, .form2 {
+  background: white;
+}
+
+#filler {
+
+  font-size: 18px;
+  font-family: 'Simonetta', cursive;   
+}
+.input-field textarea[class=input-field]:focus {
+
+border-bottom: 10px solid red;
+box-shadow: 0 10px 0 0 red;
+}
+
+.modal-form-row {
+
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 601px){
+    .iq, .iq .nav-wrapper i, .iq a.button-collapse, .iq a.button-collapse i {
+        height: 40px;
+        line-height: 40px;
+    }
+}
