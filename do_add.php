@@ -3,13 +3,13 @@
 session_start();
 include 'dbh.php';
 
-$qname = $_POST['qname'];
-$ques = $_POST['ques'];
-$opt1 = $_POST['opt1'];
-$opt2 = $_POST['opt2'];
-$opt3 = $_POST['opt3'];
-$opt4 = $_POST['opt4'];
-$copt = $_POST['copt'];
+$qname = mysqli_real_escape_string($conn, $_POST['qname']);
+$ques = mysqli_real_escape_string($conn, $_POST['ques']);
+$opt1 = mysqli_real_escape_string($conn, $_POST['opt1']);
+$opt2 = mysqli_real_escape_string($conn, $_POST['opt2']);
+$opt3 = mysqli_real_escape_string($conn, $_POST['opt3']);
+$opt4 = mysqli_real_escape_string($conn, $_POST['opt4']);
+$copt = mysqli_real_escape_string($conn, $_POST['copt']);
 $date = date("Y-m-d");
 
 $idd = $_SESSION['id'];
@@ -34,8 +34,9 @@ if($copt == 1 || $copt == 2 || $copt == 3 || $copt == 4) {
 	$row = mysqli_fetch_assoc($result);
 	$username = $row['uid'];
 
+	$encrypted_copt = password_hash($copt,PASSWORD_DEFAULT);
 	$query = "INSERT INTO question (qname, ques, opt1, opt2, opt3, opt4, copt, date, username)
-	        VALUES ('$qname', '$ques', '$opt1', '$opt2', '$opt3', '$opt4', '$copt', '$date', '$username')";
+	        VALUES ('$qname', '$ques', '$opt1', '$opt2', '$opt3', '$opt4', '$encrypted_copt', '$date', '$username')";
 	$result2 = mysqli_query($conn, $query);
 
 	$update = "UPDATE user SET qno = qno + 1 where uid = '$username'";
