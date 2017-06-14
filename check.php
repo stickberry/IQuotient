@@ -3,8 +3,8 @@
 session_start();
 include 'dbh.php';
 
-$ans = $_POST['ans'];
-$qname = $_POST['qname'];
+$ans = mysqli_real_escape_string($conn, $_POST['ans']);
+$qname = mysqli_real_escape_string($conn, $_POST['qname']);
 
 $idd = $_SESSION['id'];
 $sql = "SELECT uid from user WHERE id='$idd'";
@@ -24,10 +24,12 @@ if($username == $quid) {
 
 if ($ans == 1 || $ans == 2 || $ans == 3 || $ans == 4)
 {
-	$sql = "SELECT copt FROM question WHERE qname='$qname'";
+	$sql = "SELECT * FROM question WHERE qname='$qname'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
-	$cans =  $row['copt'];
+
+	$hash_copt = $row['copt'];
+	$hash = password_verify($ans, $hash_copt);
 
 	$idd = $_SESSION['id'];
 	$sql = "SELECT uid from user WHERE id='$idd'";
@@ -35,7 +37,7 @@ if ($ans == 1 || $ans == 2 || $ans == 3 || $ans == 4)
 	$row = mysqli_fetch_assoc($result);
 	$username = $row['uid'];
 
-	if($ans == $cans) {
+	if($hash != 0) {
 
 		$update = "UPDATE user SET score = score + 10, cans = cans + 1 where uid = '$username'";
 		$result3 = mysqli_query($conn, $update);
