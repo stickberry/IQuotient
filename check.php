@@ -17,11 +17,6 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $quid = $row['username'];
 
-if($username == $quid) {
-	header("Location:user.php?error=yourquery");
-	exit();
-}
-
 if ($ans == 1 || $ans == 2 || $ans == 3 || $ans == 4)
 {
 	$sql = "SELECT * FROM question WHERE qname='$qname'";
@@ -47,17 +42,34 @@ if ($ans == 1 || $ans == 2 || $ans == 3 || $ans == 4)
 
 		$update = "UPDATE question SET solved = solved + 1 where qname = '$qname'";
 		$result3 = mysqli_query($conn, $update);
-		header("Location:user.php?correct");
-		exit();
+		echo "<span class = 'green-text result col s6 offset-s1'> Correct answer. +10 points. </span>";
 	} else {
 
 		$update = "UPDATE user SET score = score - 3 where uid = '$username'";
 		$result3 = mysqli_query($conn, $update);
-		include 'rank.php';
-		header("Location:user.php?wrong");
-		exit();
+
+		$stmt = $conn->prepare("SELECT * FROM attempt WHERE uid = ? AND qname = ?");
+		$stmt->bind_param("ss", $username, $qname);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$rowNum = $result->num_rows;
+
+		if($rowNum <1) {
+			$insert =  "INSERT INTO attempt (qname, uid, try) VALUES ('$qname', '$username', 1)";
+			$result6 = mysqli_query($conn, $insert);
+			include 'rank.php';
+
+		echo "<span class = 'red-text result col s6'> &emsp; &emsp; &emsp; Wrong answer. -3 points. 1 try left. </span>";
+			
+		} else {
+			$update = "UPDATE attempt SET try = 2, status = 1 WHERE uid = '$username' AND qname = '$qname' ";
+			$result = mysqli_query($conn, $update);
+			include 'rank.php';
+			echo "we";
+			
+		}
 	}
 
 } else {
-	header("Location:user.php?error=opt");
+	echo "<span class = 'red-text result col s6 offset-s1'> Invalid answer. Try again. </span>";
 }
